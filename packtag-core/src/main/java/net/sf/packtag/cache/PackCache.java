@@ -55,6 +55,14 @@ public class PackCache {
 	}
 
 
+	public static CacheProvider getCacheProvider() {
+		if (getInstance().provider != null) {
+			return getInstance().provider;
+		}
+		return null;
+	}
+
+
 	private CacheProvider getResourceCache(final ServletContext context) {
 		if (provider == null) {
 			Class providerClass = ContextConfiguration.getCacheProviderClass(context);
